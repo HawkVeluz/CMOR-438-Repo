@@ -1,8 +1,8 @@
 from .supervised_learning import (
-    Perceptron)
+    Perceptron, LinearRegression)
 
 from .preprocessing import train_test_split
 
 __all__ = [
-    "Perceptron",
+    "Perceptron", "LinearRegression",
     "train_test_split" ]

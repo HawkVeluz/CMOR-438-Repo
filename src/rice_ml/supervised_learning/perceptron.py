@@ -1,8 +1,8 @@
 import numpy as np
 
 class Perceptron:
-    def __init__(self, eta=0.1, n_iters=1000):
-        self.eta = eta
+    def __init__(self, learning_rate=0.1, n_iters=1000):
+        self.eta = learning_rate
         self.n_iters = n_iters
     
     def train(self, X, y):
