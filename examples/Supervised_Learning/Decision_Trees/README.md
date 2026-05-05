@@ -26,7 +26,8 @@ Regression: Leaf node stores the mean value of targets
 ## Dataset
 
 **Red Wine Quality** — 1599 Instances, 12 Features
-**Label:** 1: Quality >= 7, 0 : Quality < 7
+**Classification Label:** 1: Quality >= 7, 0 : Quality < 7  
+**Regression Label:** Quality: 0-10 range
 
 ## Files
 - `Decision_Trees.ipynb` — notebook explaining the decision tree, as well as data preprocessing methods and results analysis
