@@ -8,20 +8,20 @@ def test_linear_regression_shapes():
     y = np.array([2, 4, 6, 8])
 
     model = LinearRegression()
-    model.train(X, y)
+    model.train_gd(X, y)
 
     pred = model.predict(X)
 
     assert pred.shape == y.shape
 
 
-# Linear regression perfect train
-def test_linear_regression_perfect_train():
+# Linear regression perfect train_gd
+def test_linear_regression_perfect_train_gd():
     X = np.array([[1], [2], [3], [4]])
     y = np.array([2, 4, 6, 8])
 
     model = LinearRegression()
-    model.train(X, y)
+    model.train_gd_(X, y)
 
     pred = model.predict(X)
 
@@ -34,7 +34,7 @@ def test_linear_regression_no_nan():
     y = np.random.rand(50)
 
     model = LinearRegression()
-    model.train(X, y)
+    model.train_gd(X, y)
 
     pred = model.predict(X)
 
@@ -47,7 +47,7 @@ def test_linear_regression_loss_decreases():
     y = np.array([2, 4, 6, 8, 10])
 
     model = LinearRegression()
-    model.train(X, y)
+    model.train_gd(X, y)
 
     assert hasattr(model, "errors_")
     assert model.errors_[-1] <= model.errors_[0]
