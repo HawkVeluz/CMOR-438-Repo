@@ -107,6 +107,18 @@ class KNNRegressor(object):
         self.k = k
 
     def train(self, X, y):
+        """
+        Store the training data (no computation performed).
+
+        Parameters
+        ----------
+        X: array-like of shape (n_samples, n_features)
+        y: array-like of shape (n_samples,)
+
+        Returns
+        -------
+        self
+        """
         self.X_train = np.array(X, dtype=float)
         self.y_train = np.array(y, dtype=float)
         return self

@@ -29,15 +29,49 @@ class LogisticRegression(object):
         self.n_iterations= n_iterations
 
     def predict_prob(self, X):
+        """
+        Predict the probabilities for the provided data.
+
+        Parameters
+        ----------
+        X: array-like of shape (n_samples, n_features)
+
+        Returns
+        -------
+        y_prob: ndarray of shape (n_samples,)
+            The predicted probabilities for each data point in X.
+        """
         # Calculate the predicted probabilities for samples in X.
         z = np.dot(X, self.w_[:-1]) + self.w_[-1]
         return sigmoid(z)
 
     def predict(self, X):
+        """Predict the target values for the provided data.
+        Parameters
+        ----------
+        X: array-like of shape (n_samples, n_features)
+        
+        Attributes
+        -------
+        y_pred: ndarray of shape (n_samples,)
+        Predicted target values for each data point in X.
+        """
         # Predict class labels for samples in X.
         return (self.predict_prob(X) >= 0.5).astype(int)
 
     def train(self, X, y):
+        """
+        Train the logistic regression model on the provided data.
+
+        Parameters
+        ----------
+        X: array-like of shape (n_samples, n_features)
+        y: array-like of shape (n_samples,)
+
+        Returns
+        -------
+        self
+        """
         X, y = np.array(X, dtype=float), np.array(y, dtype=float)
         self.w_ = np.random.rand(X.shape[1] + 1)
         self.errors_ = []
