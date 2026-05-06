@@ -34,7 +34,7 @@ class LinearRegression(object):
         self
         """
         X_b = np.c_[np.ones((X.shape[0], 1)), X]
-        self.w_ = np.linalg.pinv(X_b.T @ X_b) @ X_b.T @ y
+        self.w_ = np.linalg.lstsq(X_b, y, rcond=None)[0]
 
     def train_gd(self, X, y):
         """

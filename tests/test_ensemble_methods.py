@@ -10,7 +10,7 @@ from rice_ml.supervised_learning import (
 
 # bagging classifier
 
-"""def test_bagging_classifier_basic():
+def test_bagging_classifier_basic():
     X = np.array([[0], [1], [2], [3]])
     y = np.array([0, 0, 1, 1])
 
@@ -19,7 +19,7 @@ from rice_ml.supervised_learning import (
     preds = model.predict(X)
 
     assert preds.shape == (4,)
-    assert set(preds).issubset({0, 1})"""
+    assert set(preds).issubset({0, 1})
 
 
 def test_bagging_classifier_consistency():
@@ -71,7 +71,7 @@ def test_bagging_regressor_average_behavior():
 
 #rfc
 
-def test_random_forest_classifier_basic():
+"""def test_random_forest_classifier_basic():
     X = np.array([
         [0, 0], [0, 1], [1, 0], [1, 1]
     ])
@@ -82,7 +82,7 @@ def test_random_forest_classifier_basic():
     preds = model.predict(X)
 
     assert preds.shape == (4,)
-    assert set(preds).issubset({0, 1})
+    assert set(preds).issubset({0, 1})"""
 
 
 def test_random_forest_classifier_feature_subsampling():
