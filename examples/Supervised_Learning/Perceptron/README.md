@@ -27,7 +27,7 @@ Where:
 
 ## Dataset
 
-**Breast Cance Wisconsin (Diagnostic)** — 569 Instances, 30 Features  
+**Breast Cance Wisconsin (Diagnostic)** — 569 Instances, 32 Features  
 **Label:** 1 = Malignant, -1 = Benign
 
 ## Files
