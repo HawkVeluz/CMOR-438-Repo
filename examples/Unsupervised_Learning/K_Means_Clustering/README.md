@@ -36,11 +36,12 @@ $$
 
 ---
 
-## Dataset
+## Kaggle Dataset
 
+- `Mall_customers.csv` - — 200 Instances, 5 Features 
 
 ---
 
 ## Files
 - `K_Means_Clustering.ipynb` — notebook explaining K-Means-Clustering, as well as data preprocessing methods and results analysis
-- `data/` — dataset 
+- `Mall_customers.csv` — dataset 

@@ -50,9 +50,12 @@ class KMeansClustering:
 
         rng = np.random.default_rng(self.random_state)
 
-        # random centroids
-        idx = rng.choice(n_samples, self.k, replace=False)
-        self.centroids = X[idx]
+        # random initial centroids
+        centroids = []
+
+        indices = rng.choice(X.shape[0], size=self.k, replace=False)
+
+        self.centroids = X[indices].copy()   
 
         for _ in range(self.max_iters):
             # assign clusters
@@ -66,7 +69,13 @@ class KMeansClustering:
                 points = X[labels == i]
 
                 if len(points) == 0:
-                    new_centroids[i] = X[rng.integers(0, n_samples)]
+                    # compute distance to nearest centroid for each point
+                    distances = np.sum((X[:, None] - self.centroids[None, :]) ** 2, axis=2)
+                    min_distances = np.min(distances, axis=1)
+
+                    # pick the point farthest from its nearest centroid
+                    farthest_idx = np.argmax(min_distances)
+                    new_centroids[i] = X[farthest_idx]
                 else:
                     new_centroids[i] = np.mean(points, axis=0)
 
@@ -75,7 +84,8 @@ class KMeansClustering:
 
             if shift < self.tol:
                 break
-
+        distances = np.linalg.norm(X[:, None] - self.centroids[None, :], axis=2)
+        labels = np.argmin(distances, axis=1)
         self.labels_ = labels
         return self
 
@@ -112,6 +122,7 @@ class KMeansClustering:
         if self.centroids is None or self.labels_ is None:
             raise ValueError("Model must be fitted before computing inertia.")
 
-        distances = np.linalg.norm(X - self.centroids[self.labels_], axis=1) ** 2
-        self.inertia_ = np.sum(distances)
+        distances = np.linalg.norm(X[:, None] - self.centroids[None, :], axis=2)
+        min_distances = np.min(distances, axis=1)
+        self.inertia_ = np.sum(min_distances ** 2)
         return self.inertia_
