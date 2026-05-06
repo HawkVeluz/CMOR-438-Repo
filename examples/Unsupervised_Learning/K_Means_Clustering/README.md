@@ -36,11 +36,11 @@ $$
 
 ---
 
-## 3. Dataset
+## Dataset
 
 
 ---
 
-## 4. Files
+## Files
 - `K_Means_Clustering.ipynb` — notebook explaining K-Means-Clustering, as well as data preprocessing methods and results analysis
 - `data/` — dataset 
