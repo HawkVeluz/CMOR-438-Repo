@@ -46,7 +46,7 @@ def test_logistic_regression_separable_data():
     X = np.array([[0], [1], [2], [3], [4], [5]])
     y = np.array([0, 0, 0, 1, 1, 1])
 
-    model = LogisticRegression(learning_rate=0.1, n_iter=200)
+    model = LogisticRegression(learning_rate=0.1, n_iterations=200)
     model.train(X, y)
 
     pred = model.predict(X)

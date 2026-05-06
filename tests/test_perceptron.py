@@ -10,7 +10,7 @@ def test_perceptron_and_gate():
         [1, 0],
         [1, 1]
     ])
-    y = np.array([0, 0, 0, 1])
+    y = np.array([-1, -1, -1, 1])
 
     model = Perceptron(learning_rate=0.1, n_iters=20)
     model.train(X, y)
@@ -27,7 +27,7 @@ def test_perceptron_or_gate():
         [1, 0],
         [1, 1]
     ])
-    y = np.array([0, 1, 1, 1])
+    y = np.array([-1, 1, 1, 1])
 
     model = Perceptron(learning_rate=0.1, n_iters=20)
     model.train(X, y)
@@ -38,7 +38,7 @@ def test_perceptron_or_gate():
 # Shape check
 def test_perceptron_output_shape():
     X = np.array([[1, 2], [2, 3], [3, 4]])
-    y = np.array([0, 1, 1])
+    y = np.array([-1, 1, 1])
 
     model = Perceptron()
     model.train(X, y)
@@ -68,7 +68,7 @@ def test_perceptron_learning_progress():
         [1, 0],
         [1, 1]
     ])
-    y = np.array([0, 0, 0, 1])
+    y = np.array([-1, -1, -1, 1])
 
     model = Perceptron(learning_rate=0.1, n_iters=50)
     model.train(X, y)
