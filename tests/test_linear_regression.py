@@ -21,7 +21,7 @@ def test_linear_regression_perfect_train_gd():
     y = np.array([2, 4, 6, 8])
 
     model = LinearRegression()
-    model.train_gd_(X, y)
+    model.train_gd(X, y)
 
     pred = model.predict(X)
 

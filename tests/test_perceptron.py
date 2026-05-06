@@ -12,7 +12,7 @@ def test_perceptron_and_gate():
     ])
     y = np.array([0, 0, 0, 1])
 
-    model = Perceptron(learning_rate=0.1, n_iter=20)
+    model = Perceptron(learning_rate=0.1, n_iters=20)
     model.train(X, y)
     pred = model.predict(X)
 
@@ -29,7 +29,7 @@ def test_perceptron_or_gate():
     ])
     y = np.array([0, 1, 1, 1])
 
-    model = Perceptron(learning_rate=0.1, n_iter=20)
+    model = Perceptron(learning_rate=0.1, n_iters=20)
     model.train(X, y)
     pred = model.predict(X)
 
@@ -70,7 +70,7 @@ def test_perceptron_learning_progress():
     ])
     y = np.array([0, 0, 0, 1])
 
-    model = Perceptron(learning_rate=0.1, n_iter=50)
+    model = Perceptron(learning_rate=0.1, n_iters=50)
     model.train(X, y)
 
     assert hasattr(model, "errors_")

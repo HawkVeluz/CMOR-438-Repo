@@ -185,7 +185,7 @@ class RandomForestRegressor:
             y_sample = y[idxs]
 
             # feature subsampling
-            feat_idxs = np.random.choice(0, self.max_features, replace=False)
+            feat_idxs = np.random.choice(n_features, self.max_features, replace=False)
 
             model = DecisionTreeRegressor(max_depth=self.max_depth)
             model.train(X_sample[:, feat_idxs], y_sample)
