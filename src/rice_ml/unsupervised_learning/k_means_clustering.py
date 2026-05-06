@@ -113,5 +113,5 @@ class KMeansClustering:
             raise ValueError("Model must be fitted before computing inertia.")
 
         distances = np.linalg.norm(X - self.centroids[self.labels_], axis=1) ** 2
-        self.intertia_ = np.sum(distances)
+        self.inertia_ = np.sum(distances)
         return self.inertia_

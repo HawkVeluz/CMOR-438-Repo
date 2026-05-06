@@ -1,4 +1,5 @@
 import numpy as np
+import pytest
 from rice_ml.supervised_learning import DecisionTree, DecisionTreeRegressor
 
 # Decision Tree Classifier initialization
